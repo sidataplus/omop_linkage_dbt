@@ -9,6 +9,8 @@ This work-in-progress dbt package is designed to facilitate the linkage of OMOP 
 - Validate and identify discrepancies in key attributes like gender and year of birth
 - Identify temporal discrepancies in `condition_occurrence`
 
+![dbt Data Lineage](readme-fig-linage.png)
+
 ## Getting Started
 
 ### Pre-installation Steps
@@ -48,7 +50,7 @@ Here is a list of the main models in this package:
 
 ### Linkage Models
 
-- `linked_person.sql`: Matches persons from EHR and Claims databases based on `person_source_value`.
+- [`linked_person.sql`](models/linkage/linked_person.sql): Matches persons from EHR and Claims databases based on `person_source_value`.
 
 ### Validation and Discrepancy Models
 
