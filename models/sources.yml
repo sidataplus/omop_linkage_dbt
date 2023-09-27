@@ -1,0 +1,2914 @@
+version: 2
+
+sources:
+  - name: cdm_claims
+    schema: cdm_claims
+    tables:
+      - name: care_site
+        description: ""
+        columns:
+          - name: care_site_id
+            data_type: INTEGER
+            description: ""
+          - name: care_site_name
+            data_type: CHARACTER VARYING(255)
+            description: ""
+          - name: place_of_service_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: location_id
+            data_type: INTEGER
+            description: ""
+          - name: care_site_source_value
+            data_type: CHARACTER VARYING(50)
+            description: ""
+          - name: place_of_service_source_value
+            data_type: CHARACTER VARYING(50)
+            description: ""
+
+      - name: cdm_source
+        description: ""
+        columns:
+          - name: cdm_source_name
+            data_type: CHARACTER VARYING(255)
+            description: ""
+          - name: cdm_source_abbreviation
+            data_type: CHARACTER VARYING(25)
+            description: ""
+          - name: cdm_holder
+            data_type: CHARACTER VARYING(255)
+            description: ""
+          - name: source_description
+            data_type: TEXT
+            description: ""
+          - name: source_documentation_reference
+            data_type: CHARACTER VARYING(255)
+            description: ""
+          - name: cdm_etl_reference
+            data_type: CHARACTER VARYING(255)
+            description: ""
+          - name: source_release_date
+            data_type: DATE
+            description: ""
+          - name: cdm_release_date
+            data_type: DATE
+            description: ""
+          - name: cdm_version
+            data_type: CHARACTER VARYING(10)
+            description: ""
+          - name: cdm_version_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: vocabulary_version
+            data_type: CHARACTER VARYING(20)
+            description: ""
+
+      - name: cohort
+        description: ""
+        columns:
+          - name: cohort_definition_id
+            data_type: INTEGER
+            description: ""
+          - name: subject_id
+            data_type: INTEGER
+            description: ""
+          - name: cohort_start_date
+            data_type: DATE
+            description: ""
+          - name: cohort_end_date
+            data_type: DATE
+            description: ""
+
+      - name: cohort_definition
+        description: ""
+        columns:
+          - name: cohort_definition_id
+            data_type: INTEGER
+            description: ""
+          - name: cohort_definition_name
+            data_type: CHARACTER VARYING(255)
+            description: ""
+          - name: cohort_definition_description
+            data_type: TEXT
+            description: ""
+          - name: definition_type_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: cohort_definition_syntax
+            data_type: TEXT
+            description: ""
+          - name: subject_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: cohort_initiation_date
+            data_type: DATE
+            description: ""
+
+      - name: concept
+        description: ""
+        columns:
+          - name: concept_id
+            data_type: INTEGER
+            description: ""
+          - name: concept_name
+            data_type: CHARACTER VARYING(255)
+            description: ""
+          - name: domain_id
+            data_type: CHARACTER VARYING(20)
+            description: ""
+          - name: vocabulary_id
+            data_type: CHARACTER VARYING(20)
+            description: ""
+          - name: concept_class_id
+            data_type: CHARACTER VARYING(20)
+            description: ""
+          - name: standard_concept
+            data_type: CHARACTER VARYING(1)
+            description: ""
+          - name: concept_code
+            data_type: CHARACTER VARYING(50)
+            description: ""
+          - name: valid_start_date
+            data_type: DATE
+            description: ""
+          - name: valid_end_date
+            data_type: DATE
+            description: ""
+          - name: invalid_reason
+            data_type: CHARACTER VARYING(1)
+            description: ""
+
+      - name: concept_ancestor
+        description: ""
+        columns:
+          - name: ancestor_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: descendant_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: min_levels_of_separation
+            data_type: INTEGER
+            description: ""
+          - name: max_levels_of_separation
+            data_type: INTEGER
+            description: ""
+
+      - name: concept_class
+        description: ""
+        columns:
+          - name: concept_class_id
+            data_type: CHARACTER VARYING(20)
+            description: ""
+          - name: concept_class_name
+            data_type: CHARACTER VARYING(255)
+            description: ""
+          - name: concept_class_concept_id
+            data_type: INTEGER
+            description: ""
+
+      - name: concept_relationship
+        description: ""
+        columns:
+          - name: concept_id_1
+            data_type: INTEGER
+            description: ""
+          - name: concept_id_2
+            data_type: INTEGER
+            description: ""
+          - name: relationship_id
+            data_type: CHARACTER VARYING(20)
+            description: ""
+          - name: valid_start_date
+            data_type: DATE
+            description: ""
+          - name: valid_end_date
+            data_type: DATE
+            description: ""
+          - name: invalid_reason
+            data_type: CHARACTER VARYING(1)
+            description: ""
+
+      - name: concept_synonym
+        description: ""
+        columns:
+          - name: concept_id
+            data_type: INTEGER
+            description: ""
+          - name: concept_synonym_name
+            data_type: CHARACTER VARYING(1000)
+            description: ""
+          - name: language_concept_id
+            data_type: INTEGER
+            description: ""
+
+      - name: condition_era
+        description: ""
+        columns:
+          - name: condition_era_id
+            data_type: INTEGER
+            description: ""
+          - name: person_id
+            data_type: INTEGER
+            description: ""
+          - name: condition_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: condition_era_start_date
+            data_type: DATE
+            description: ""
+          - name: condition_era_end_date
+            data_type: DATE
+            description: ""
+          - name: condition_occurrence_count
+            data_type: INTEGER
+            description: ""
+
+      - name: condition_occurrence
+        description: ""
+        columns:
+          - name: condition_occurrence_id
+            data_type: INTEGER
+            description: ""
+          - name: person_id
+            data_type: INTEGER
+            description: ""
+          - name: condition_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: condition_start_date
+            data_type: DATE
+            description: ""
+          - name: condition_start_datetime
+            data_type: TIMESTAMP WITHOUT TIME ZONE
+            description: ""
+          - name: condition_end_date
+            data_type: DATE
+            description: ""
+          - name: condition_end_datetime
+            data_type: TIMESTAMP WITHOUT TIME ZONE
+            description: ""
+          - name: condition_type_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: condition_status_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: stop_reason
+            data_type: CHARACTER VARYING(20)
+            description: ""
+          - name: provider_id
+            data_type: INTEGER
+            description: ""
+          - name: visit_occurrence_id
+            data_type: INTEGER
+            description: ""
+          - name: visit_detail_id
+            data_type: INTEGER
+            description: ""
+          - name: condition_source_value
+            data_type: CHARACTER VARYING(50)
+            description: ""
+          - name: condition_source_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: condition_status_source_value
+            data_type: CHARACTER VARYING(50)
+            description: ""
+
+      - name: cost
+        description: ""
+        columns:
+          - name: cost_id
+            data_type: INTEGER
+            description: ""
+          - name: cost_event_id
+            data_type: INTEGER
+            description: ""
+          - name: cost_domain_id
+            data_type: CHARACTER VARYING(20)
+            description: ""
+          - name: cost_type_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: currency_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: total_charge
+            data_type: NUMERIC
+            description: ""
+          - name: total_cost
+            data_type: NUMERIC
+            description: ""
+          - name: total_paid
+            data_type: NUMERIC
+            description: ""
+          - name: paid_by_payer
+            data_type: NUMERIC
+            description: ""
+          - name: paid_by_patient
+            data_type: NUMERIC
+            description: ""
+          - name: paid_patient_copay
+            data_type: NUMERIC
+            description: ""
+          - name: paid_patient_coinsurance
+            data_type: NUMERIC
+            description: ""
+          - name: paid_patient_deductible
+            data_type: NUMERIC
+            description: ""
+          - name: paid_by_primary
+            data_type: NUMERIC
+            description: ""
+          - name: paid_ingredient_cost
+            data_type: NUMERIC
+            description: ""
+          - name: paid_dispensing_fee
+            data_type: NUMERIC
+            description: ""
+          - name: payer_plan_period_id
+            data_type: INTEGER
+            description: ""
+          - name: amount_allowed
+            data_type: NUMERIC
+            description: ""
+          - name: revenue_code_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: revenue_code_source_value
+            data_type: CHARACTER VARYING(50)
+            description: ""
+          - name: drg_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: drg_source_value
+            data_type: CHARACTER VARYING(3)
+            description: ""
+
+      - name: death
+        description: ""
+        columns:
+          - name: person_id
+            data_type: INTEGER
+            description: ""
+          - name: death_date
+            data_type: DATE
+            description: ""
+          - name: death_datetime
+            data_type: TIMESTAMP WITHOUT TIME ZONE
+            description: ""
+          - name: death_type_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: cause_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: cause_source_value
+            data_type: CHARACTER VARYING(50)
+            description: ""
+          - name: cause_source_concept_id
+            data_type: INTEGER
+            description: ""
+
+      - name: device_exposure
+        description: ""
+        columns:
+          - name: device_exposure_id
+            data_type: INTEGER
+            description: ""
+          - name: person_id
+            data_type: INTEGER
+            description: ""
+          - name: device_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: device_exposure_start_date
+            data_type: DATE
+            description: ""
+          - name: device_exposure_start_datetime
+            data_type: TIMESTAMP WITHOUT TIME ZONE
+            description: ""
+          - name: device_exposure_end_date
+            data_type: DATE
+            description: ""
+          - name: device_exposure_end_datetime
+            data_type: TIMESTAMP WITHOUT TIME ZONE
+            description: ""
+          - name: device_type_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: unique_device_id
+            data_type: CHARACTER VARYING(255)
+            description: ""
+          - name: production_id
+            data_type: CHARACTER VARYING(255)
+            description: ""
+          - name: quantity
+            data_type: INTEGER
+            description: ""
+          - name: provider_id
+            data_type: INTEGER
+            description: ""
+          - name: visit_occurrence_id
+            data_type: INTEGER
+            description: ""
+          - name: visit_detail_id
+            data_type: INTEGER
+            description: ""
+          - name: device_source_value
+            data_type: CHARACTER VARYING(50)
+            description: ""
+          - name: device_source_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: unit_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: unit_source_value
+            data_type: CHARACTER VARYING(50)
+            description: ""
+          - name: unit_source_concept_id
+            data_type: INTEGER
+            description: ""
+
+      - name: domain
+        description: ""
+        columns:
+          - name: domain_id
+            data_type: CHARACTER VARYING(20)
+            description: ""
+          - name: domain_name
+            data_type: CHARACTER VARYING(255)
+            description: ""
+          - name: domain_concept_id
+            data_type: INTEGER
+            description: ""
+
+      - name: dose_era
+        description: ""
+        columns:
+          - name: dose_era_id
+            data_type: INTEGER
+            description: ""
+          - name: person_id
+            data_type: INTEGER
+            description: ""
+          - name: drug_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: unit_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: dose_value
+            data_type: NUMERIC
+            description: ""
+          - name: dose_era_start_date
+            data_type: DATE
+            description: ""
+          - name: dose_era_end_date
+            data_type: DATE
+            description: ""
+
+      - name: drug_era
+        description: ""
+        columns:
+          - name: drug_era_id
+            data_type: INTEGER
+            description: ""
+          - name: person_id
+            data_type: INTEGER
+            description: ""
+          - name: drug_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: drug_era_start_date
+            data_type: DATE
+            description: ""
+          - name: drug_era_end_date
+            data_type: DATE
+            description: ""
+          - name: drug_exposure_count
+            data_type: INTEGER
+            description: ""
+          - name: gap_days
+            data_type: INTEGER
+            description: ""
+
+      - name: drug_exposure
+        description: ""
+        columns:
+          - name: drug_exposure_id
+            data_type: INTEGER
+            description: ""
+          - name: person_id
+            data_type: INTEGER
+            description: ""
+          - name: drug_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: drug_exposure_start_date
+            data_type: DATE
+            description: ""
+          - name: drug_exposure_start_datetime
+            data_type: TIMESTAMP WITHOUT TIME ZONE
+            description: ""
+          - name: drug_exposure_end_date
+            data_type: DATE
+            description: ""
+          - name: drug_exposure_end_datetime
+            data_type: TIMESTAMP WITHOUT TIME ZONE
+            description: ""
+          - name: verbatim_end_date
+            data_type: DATE
+            description: ""
+          - name: drug_type_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: stop_reason
+            data_type: CHARACTER VARYING(20)
+            description: ""
+          - name: refills
+            data_type: INTEGER
+            description: ""
+          - name: quantity
+            data_type: NUMERIC
+            description: ""
+          - name: days_supply
+            data_type: INTEGER
+            description: ""
+          - name: sig
+            data_type: TEXT
+            description: ""
+          - name: route_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: lot_number
+            data_type: CHARACTER VARYING(50)
+            description: ""
+          - name: provider_id
+            data_type: INTEGER
+            description: ""
+          - name: visit_occurrence_id
+            data_type: INTEGER
+            description: ""
+          - name: visit_detail_id
+            data_type: INTEGER
+            description: ""
+          - name: drug_source_value
+            data_type: CHARACTER VARYING(50)
+            description: ""
+          - name: drug_source_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: route_source_value
+            data_type: CHARACTER VARYING(50)
+            description: ""
+          - name: dose_unit_source_value
+            data_type: CHARACTER VARYING(50)
+            description: ""
+
+      - name: drug_strength
+        description: ""
+        columns:
+          - name: drug_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: ingredient_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: amount_value
+            data_type: NUMERIC
+            description: ""
+          - name: amount_unit_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: numerator_value
+            data_type: NUMERIC
+            description: ""
+          - name: numerator_unit_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: denominator_value
+            data_type: NUMERIC
+            description: ""
+          - name: denominator_unit_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: box_size
+            data_type: INTEGER
+            description: ""
+          - name: valid_start_date
+            data_type: DATE
+            description: ""
+          - name: valid_end_date
+            data_type: DATE
+            description: ""
+          - name: invalid_reason
+            data_type: CHARACTER VARYING(1)
+            description: ""
+
+      - name: episode
+        description: ""
+        columns:
+          - name: episode_id
+            data_type: INTEGER
+            description: ""
+          - name: person_id
+            data_type: INTEGER
+            description: ""
+          - name: episode_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: episode_start_date
+            data_type: DATE
+            description: ""
+          - name: episode_start_datetime
+            data_type: TIMESTAMP WITHOUT TIME ZONE
+            description: ""
+          - name: episode_end_date
+            data_type: DATE
+            description: ""
+          - name: episode_end_datetime
+            data_type: TIMESTAMP WITHOUT TIME ZONE
+            description: ""
+          - name: episode_parent_id
+            data_type: INTEGER
+            description: ""
+          - name: episode_number
+            data_type: INTEGER
+            description: ""
+          - name: episode_object_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: episode_type_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: episode_source_value
+            data_type: CHARACTER VARYING(50)
+            description: ""
+          - name: episode_source_concept_id
+            data_type: INTEGER
+            description: ""
+
+      - name: episode_event
+        description: ""
+        columns:
+          - name: episode_id
+            data_type: INTEGER
+            description: ""
+          - name: event_id
+            data_type: INTEGER
+            description: ""
+          - name: episode_event_field_concept_id
+            data_type: INTEGER
+            description: ""
+
+      - name: fact_relationship
+        description: ""
+        columns:
+          - name: domain_concept_id_1
+            data_type: INTEGER
+            description: ""
+          - name: fact_id_1
+            data_type: INTEGER
+            description: ""
+          - name: domain_concept_id_2
+            data_type: INTEGER
+            description: ""
+          - name: fact_id_2
+            data_type: INTEGER
+            description: ""
+          - name: relationship_concept_id
+            data_type: INTEGER
+            description: ""
+
+      - name: location
+        description: ""
+        columns:
+          - name: location_id
+            data_type: INTEGER
+            description: ""
+          - name: address_1
+            data_type: CHARACTER VARYING(50)
+            description: ""
+          - name: address_2
+            data_type: CHARACTER VARYING(50)
+            description: ""
+          - name: city
+            data_type: CHARACTER VARYING(50)
+            description: ""
+          - name: state
+            data_type: CHARACTER VARYING(2)
+            description: ""
+          - name: zip
+            data_type: CHARACTER VARYING(9)
+            description: ""
+          - name: county
+            data_type: CHARACTER VARYING(20)
+            description: ""
+          - name: location_source_value
+            data_type: CHARACTER VARYING(50)
+            description: ""
+          - name: country_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: country_source_value
+            data_type: CHARACTER VARYING(80)
+            description: ""
+          - name: latitude
+            data_type: NUMERIC
+            description: ""
+          - name: longitude
+            data_type: NUMERIC
+            description: ""
+
+      - name: measurement
+        description: ""
+        columns:
+          - name: measurement_id
+            data_type: INTEGER
+            description: ""
+          - name: person_id
+            data_type: INTEGER
+            description: ""
+          - name: measurement_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: measurement_date
+            data_type: DATE
+            description: ""
+          - name: measurement_datetime
+            data_type: TIMESTAMP WITHOUT TIME ZONE
+            description: ""
+          - name: measurement_time
+            data_type: CHARACTER VARYING(10)
+            description: ""
+          - name: measurement_type_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: operator_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: value_as_number
+            data_type: NUMERIC
+            description: ""
+          - name: value_as_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: unit_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: range_low
+            data_type: NUMERIC
+            description: ""
+          - name: range_high
+            data_type: NUMERIC
+            description: ""
+          - name: provider_id
+            data_type: INTEGER
+            description: ""
+          - name: visit_occurrence_id
+            data_type: INTEGER
+            description: ""
+          - name: visit_detail_id
+            data_type: INTEGER
+            description: ""
+          - name: measurement_source_value
+            data_type: CHARACTER VARYING(50)
+            description: ""
+          - name: measurement_source_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: unit_source_value
+            data_type: CHARACTER VARYING(50)
+            description: ""
+          - name: unit_source_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: value_source_value
+            data_type: CHARACTER VARYING(50)
+            description: ""
+          - name: measurement_event_id
+            data_type: INTEGER
+            description: ""
+          - name: meas_event_field_concept_id
+            data_type: INTEGER
+            description: ""
+
+      - name: metadata
+        description: ""
+        columns:
+          - name: metadata_id
+            data_type: INTEGER
+            description: ""
+          - name: metadata_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: metadata_type_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: name
+            data_type: CHARACTER VARYING(250)
+            description: ""
+          - name: value_as_string
+            data_type: CHARACTER VARYING(250)
+            description: ""
+          - name: value_as_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: value_as_number
+            data_type: NUMERIC
+            description: ""
+          - name: metadata_date
+            data_type: DATE
+            description: ""
+          - name: metadata_datetime
+            data_type: TIMESTAMP WITHOUT TIME ZONE
+            description: ""
+
+      - name: note
+        description: ""
+        columns:
+          - name: note_id
+            data_type: INTEGER
+            description: ""
+          - name: person_id
+            data_type: INTEGER
+            description: ""
+          - name: note_date
+            data_type: DATE
+            description: ""
+          - name: note_datetime
+            data_type: TIMESTAMP WITHOUT TIME ZONE
+            description: ""
+          - name: note_type_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: note_class_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: note_title
+            data_type: CHARACTER VARYING(250)
+            description: ""
+          - name: note_text
+            data_type: TEXT
+            description: ""
+          - name: encoding_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: language_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: provider_id
+            data_type: INTEGER
+            description: ""
+          - name: visit_occurrence_id
+            data_type: INTEGER
+            description: ""
+          - name: visit_detail_id
+            data_type: INTEGER
+            description: ""
+          - name: note_source_value
+            data_type: CHARACTER VARYING(50)
+            description: ""
+          - name: note_event_id
+            data_type: INTEGER
+            description: ""
+          - name: note_event_field_concept_id
+            data_type: INTEGER
+            description: ""
+
+      - name: note_nlp
+        description: ""
+        columns:
+          - name: note_nlp_id
+            data_type: INTEGER
+            description: ""
+          - name: note_id
+            data_type: INTEGER
+            description: ""
+          - name: section_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: snippet
+            data_type: CHARACTER VARYING(250)
+            description: ""
+          - name: offset
+            data_type: CHARACTER VARYING(50)
+            description: ""
+          - name: lexical_variant
+            data_type: CHARACTER VARYING(250)
+            description: ""
+          - name: note_nlp_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: note_nlp_source_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: nlp_system
+            data_type: CHARACTER VARYING(250)
+            description: ""
+          - name: nlp_date
+            data_type: DATE
+            description: ""
+          - name: nlp_datetime
+            data_type: TIMESTAMP WITHOUT TIME ZONE
+            description: ""
+          - name: term_exists
+            data_type: CHARACTER VARYING(1)
+            description: ""
+          - name: term_temporal
+            data_type: CHARACTER VARYING(50)
+            description: ""
+          - name: term_modifiers
+            data_type: CHARACTER VARYING(2000)
+            description: ""
+
+      - name: observation
+        description: ""
+        columns:
+          - name: observation_id
+            data_type: INTEGER
+            description: ""
+          - name: person_id
+            data_type: INTEGER
+            description: ""
+          - name: observation_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: observation_date
+            data_type: DATE
+            description: ""
+          - name: observation_datetime
+            data_type: TIMESTAMP WITHOUT TIME ZONE
+            description: ""
+          - name: observation_type_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: value_as_number
+            data_type: NUMERIC
+            description: ""
+          - name: value_as_string
+            data_type: CHARACTER VARYING(60)
+            description: ""
+          - name: value_as_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: qualifier_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: unit_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: provider_id
+            data_type: INTEGER
+            description: ""
+          - name: visit_occurrence_id
+            data_type: INTEGER
+            description: ""
+          - name: visit_detail_id
+            data_type: INTEGER
+            description: ""
+          - name: observation_source_value
+            data_type: CHARACTER VARYING(50)
+            description: ""
+          - name: observation_source_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: unit_source_value
+            data_type: CHARACTER VARYING(50)
+            description: ""
+          - name: qualifier_source_value
+            data_type: CHARACTER VARYING(50)
+            description: ""
+          - name: value_source_value
+            data_type: CHARACTER VARYING(50)
+            description: ""
+          - name: observation_event_id
+            data_type: INTEGER
+            description: ""
+          - name: obs_event_field_concept_id
+            data_type: INTEGER
+            description: ""
+
+      - name: observation_period
+        description: ""
+        columns:
+          - name: observation_period_id
+            data_type: INTEGER
+            description: ""
+          - name: person_id
+            data_type: INTEGER
+            description: ""
+          - name: observation_period_start_date
+            data_type: DATE
+            description: ""
+          - name: observation_period_end_date
+            data_type: DATE
+            description: ""
+          - name: period_type_concept_id
+            data_type: INTEGER
+            description: ""
+
+      - name: payer_plan_period
+        description: ""
+        columns:
+          - name: payer_plan_period_id
+            data_type: INTEGER
+            description: ""
+          - name: person_id
+            data_type: INTEGER
+            description: ""
+          - name: payer_plan_period_start_date
+            data_type: DATE
+            description: ""
+          - name: payer_plan_period_end_date
+            data_type: DATE
+            description: ""
+          - name: payer_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: payer_source_value
+            data_type: CHARACTER VARYING(50)
+            description: ""
+          - name: payer_source_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: plan_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: plan_source_value
+            data_type: CHARACTER VARYING(50)
+            description: ""
+          - name: plan_source_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: sponsor_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: sponsor_source_value
+            data_type: CHARACTER VARYING(50)
+            description: ""
+          - name: sponsor_source_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: family_source_value
+            data_type: CHARACTER VARYING(50)
+            description: ""
+          - name: stop_reason_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: stop_reason_source_value
+            data_type: CHARACTER VARYING(50)
+            description: ""
+          - name: stop_reason_source_concept_id
+            data_type: INTEGER
+            description: ""
+
+      - name: person
+        description: ""
+        columns:
+          - name: person_id
+            data_type: INTEGER
+            description: ""
+          - name: gender_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: year_of_birth
+            data_type: INTEGER
+            description: ""
+          - name: month_of_birth
+            data_type: INTEGER
+            description: ""
+          - name: day_of_birth
+            data_type: INTEGER
+            description: ""
+          - name: birth_datetime
+            data_type: TIMESTAMP WITHOUT TIME ZONE
+            description: ""
+          - name: race_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: ethnicity_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: location_id
+            data_type: INTEGER
+            description: ""
+          - name: provider_id
+            data_type: INTEGER
+            description: ""
+          - name: care_site_id
+            data_type: INTEGER
+            description: ""
+          - name: person_source_value
+            data_type: CHARACTER VARYING(50)
+            description: ""
+          - name: gender_source_value
+            data_type: CHARACTER VARYING(50)
+            description: ""
+          - name: gender_source_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: race_source_value
+            data_type: CHARACTER VARYING(50)
+            description: ""
+          - name: race_source_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: ethnicity_source_value
+            data_type: CHARACTER VARYING(50)
+            description: ""
+          - name: ethnicity_source_concept_id
+            data_type: INTEGER
+            description: ""
+
+      - name: procedure_occurrence
+        description: ""
+        columns:
+          - name: procedure_occurrence_id
+            data_type: INTEGER
+            description: ""
+          - name: person_id
+            data_type: INTEGER
+            description: ""
+          - name: procedure_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: procedure_date
+            data_type: DATE
+            description: ""
+          - name: procedure_datetime
+            data_type: TIMESTAMP WITHOUT TIME ZONE
+            description: ""
+          - name: procedure_end_date
+            data_type: DATE
+            description: ""
+          - name: procedure_end_datetime
+            data_type: TIMESTAMP WITHOUT TIME ZONE
+            description: ""
+          - name: procedure_type_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: modifier_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: quantity
+            data_type: INTEGER
+            description: ""
+          - name: provider_id
+            data_type: INTEGER
+            description: ""
+          - name: visit_occurrence_id
+            data_type: INTEGER
+            description: ""
+          - name: visit_detail_id
+            data_type: INTEGER
+            description: ""
+          - name: procedure_source_value
+            data_type: CHARACTER VARYING(50)
+            description: ""
+          - name: procedure_source_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: modifier_source_value
+            data_type: CHARACTER VARYING(50)
+            description: ""
+
+      - name: provider
+        description: ""
+        columns:
+          - name: provider_id
+            data_type: INTEGER
+            description: ""
+          - name: provider_name
+            data_type: CHARACTER VARYING(255)
+            description: ""
+          - name: npi
+            data_type: CHARACTER VARYING(20)
+            description: ""
+          - name: dea
+            data_type: CHARACTER VARYING(20)
+            description: ""
+          - name: specialty_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: care_site_id
+            data_type: INTEGER
+            description: ""
+          - name: year_of_birth
+            data_type: INTEGER
+            description: ""
+          - name: gender_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: provider_source_value
+            data_type: CHARACTER VARYING(50)
+            description: ""
+          - name: specialty_source_value
+            data_type: CHARACTER VARYING(50)
+            description: ""
+          - name: specialty_source_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: gender_source_value
+            data_type: CHARACTER VARYING(50)
+            description: ""
+          - name: gender_source_concept_id
+            data_type: INTEGER
+            description: ""
+
+      - name: relationship
+        description: ""
+        columns:
+          - name: relationship_id
+            data_type: CHARACTER VARYING(20)
+            description: ""
+          - name: relationship_name
+            data_type: CHARACTER VARYING(255)
+            description: ""
+          - name: is_hierarchical
+            data_type: CHARACTER VARYING(1)
+            description: ""
+          - name: defines_ancestry
+            data_type: CHARACTER VARYING(1)
+            description: ""
+          - name: reverse_relationship_id
+            data_type: CHARACTER VARYING(20)
+            description: ""
+          - name: relationship_concept_id
+            data_type: INTEGER
+            description: ""
+
+      - name: source_to_concept_map
+        description: ""
+        columns:
+          - name: source_code
+            data_type: CHARACTER VARYING(50)
+            description: ""
+          - name: source_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: source_vocabulary_id
+            data_type: CHARACTER VARYING(20)
+            description: ""
+          - name: source_code_description
+            data_type: CHARACTER VARYING(255)
+            description: ""
+          - name: target_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: target_vocabulary_id
+            data_type: CHARACTER VARYING(20)
+            description: ""
+          - name: valid_start_date
+            data_type: DATE
+            description: ""
+          - name: valid_end_date
+            data_type: DATE
+            description: ""
+          - name: invalid_reason
+            data_type: CHARACTER VARYING(1)
+            description: ""
+
+      - name: specimen
+        description: ""
+        columns:
+          - name: specimen_id
+            data_type: INTEGER
+            description: ""
+          - name: person_id
+            data_type: INTEGER
+            description: ""
+          - name: specimen_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: specimen_type_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: specimen_date
+            data_type: DATE
+            description: ""
+          - name: specimen_datetime
+            data_type: TIMESTAMP WITHOUT TIME ZONE
+            description: ""
+          - name: quantity
+            data_type: NUMERIC
+            description: ""
+          - name: unit_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: anatomic_site_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: disease_status_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: specimen_source_id
+            data_type: CHARACTER VARYING(50)
+            description: ""
+          - name: specimen_source_value
+            data_type: CHARACTER VARYING(50)
+            description: ""
+          - name: unit_source_value
+            data_type: CHARACTER VARYING(50)
+            description: ""
+          - name: anatomic_site_source_value
+            data_type: CHARACTER VARYING(50)
+            description: ""
+          - name: disease_status_source_value
+            data_type: CHARACTER VARYING(50)
+            description: ""
+
+      - name: visit_detail
+        description: ""
+        columns:
+          - name: visit_detail_id
+            data_type: INTEGER
+            description: ""
+          - name: person_id
+            data_type: INTEGER
+            description: ""
+          - name: visit_detail_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: visit_detail_start_date
+            data_type: DATE
+            description: ""
+          - name: visit_detail_start_datetime
+            data_type: TIMESTAMP WITHOUT TIME ZONE
+            description: ""
+          - name: visit_detail_end_date
+            data_type: DATE
+            description: ""
+          - name: visit_detail_end_datetime
+            data_type: TIMESTAMP WITHOUT TIME ZONE
+            description: ""
+          - name: visit_detail_type_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: provider_id
+            data_type: INTEGER
+            description: ""
+          - name: care_site_id
+            data_type: INTEGER
+            description: ""
+          - name: visit_detail_source_value
+            data_type: CHARACTER VARYING(50)
+            description: ""
+          - name: visit_detail_source_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: admitted_from_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: admitted_from_source_value
+            data_type: CHARACTER VARYING(50)
+            description: ""
+          - name: discharged_to_source_value
+            data_type: CHARACTER VARYING(50)
+            description: ""
+          - name: discharged_to_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: preceding_visit_detail_id
+            data_type: INTEGER
+            description: ""
+          - name: parent_visit_detail_id
+            data_type: INTEGER
+            description: ""
+          - name: visit_occurrence_id
+            data_type: INTEGER
+            description: ""
+
+      - name: visit_occurrence
+        description: ""
+        columns:
+          - name: visit_occurrence_id
+            data_type: INTEGER
+            description: ""
+          - name: person_id
+            data_type: INTEGER
+            description: ""
+          - name: visit_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: visit_start_date
+            data_type: DATE
+            description: ""
+          - name: visit_start_datetime
+            data_type: TIMESTAMP WITHOUT TIME ZONE
+            description: ""
+          - name: visit_end_date
+            data_type: DATE
+            description: ""
+          - name: visit_end_datetime
+            data_type: TIMESTAMP WITHOUT TIME ZONE
+            description: ""
+          - name: visit_type_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: provider_id
+            data_type: INTEGER
+            description: ""
+          - name: care_site_id
+            data_type: INTEGER
+            description: ""
+          - name: visit_source_value
+            data_type: CHARACTER VARYING(50)
+            description: ""
+          - name: visit_source_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: admitted_from_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: admitted_from_source_value
+            data_type: CHARACTER VARYING(50)
+            description: ""
+          - name: discharged_to_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: discharged_to_source_value
+            data_type: CHARACTER VARYING(50)
+            description: ""
+          - name: preceding_visit_occurrence_id
+            data_type: INTEGER
+            description: ""
+
+      - name: vocabulary
+        description: ""
+        columns:
+          - name: vocabulary_id
+            data_type: CHARACTER VARYING(20)
+            description: ""
+          - name: vocabulary_name
+            data_type: CHARACTER VARYING(255)
+            description: ""
+          - name: vocabulary_reference
+            data_type: CHARACTER VARYING(255)
+            description: ""
+          - name: vocabulary_version
+            data_type: CHARACTER VARYING(255)
+            description: ""
+          - name: vocabulary_concept_id
+            data_type: INTEGER
+            description: ""
+
+  - name: cdm_ehr
+    schema: cdm_ehr
+    tables:
+      - name: care_site
+        description: ""
+        columns:
+          - name: care_site_id
+            data_type: INTEGER
+            description: ""
+          - name: care_site_name
+            data_type: CHARACTER VARYING(255)
+            description: ""
+          - name: place_of_service_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: location_id
+            data_type: INTEGER
+            description: ""
+          - name: care_site_source_value
+            data_type: CHARACTER VARYING(50)
+            description: ""
+          - name: place_of_service_source_value
+            data_type: CHARACTER VARYING(50)
+            description: ""
+
+      - name: cdm_source
+        description: ""
+        columns:
+          - name: cdm_source_name
+            data_type: CHARACTER VARYING(255)
+            description: ""
+          - name: cdm_source_abbreviation
+            data_type: CHARACTER VARYING(25)
+            description: ""
+          - name: cdm_holder
+            data_type: CHARACTER VARYING(255)
+            description: ""
+          - name: source_description
+            data_type: TEXT
+            description: ""
+          - name: source_documentation_reference
+            data_type: CHARACTER VARYING(255)
+            description: ""
+          - name: cdm_etl_reference
+            data_type: CHARACTER VARYING(255)
+            description: ""
+          - name: source_release_date
+            data_type: DATE
+            description: ""
+          - name: cdm_release_date
+            data_type: DATE
+            description: ""
+          - name: cdm_version
+            data_type: CHARACTER VARYING(10)
+            description: ""
+          - name: cdm_version_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: vocabulary_version
+            data_type: CHARACTER VARYING(20)
+            description: ""
+
+      - name: cohort
+        description: ""
+        columns:
+          - name: cohort_definition_id
+            data_type: INTEGER
+            description: ""
+          - name: subject_id
+            data_type: INTEGER
+            description: ""
+          - name: cohort_start_date
+            data_type: DATE
+            description: ""
+          - name: cohort_end_date
+            data_type: DATE
+            description: ""
+
+      - name: cohort_definition
+        description: ""
+        columns:
+          - name: cohort_definition_id
+            data_type: INTEGER
+            description: ""
+          - name: cohort_definition_name
+            data_type: CHARACTER VARYING(255)
+            description: ""
+          - name: cohort_definition_description
+            data_type: TEXT
+            description: ""
+          - name: definition_type_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: cohort_definition_syntax
+            data_type: TEXT
+            description: ""
+          - name: subject_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: cohort_initiation_date
+            data_type: DATE
+            description: ""
+
+      - name: concept
+        description: ""
+        columns:
+          - name: concept_id
+            data_type: INTEGER
+            description: ""
+          - name: concept_name
+            data_type: CHARACTER VARYING(255)
+            description: ""
+          - name: domain_id
+            data_type: CHARACTER VARYING(20)
+            description: ""
+          - name: vocabulary_id
+            data_type: CHARACTER VARYING(20)
+            description: ""
+          - name: concept_class_id
+            data_type: CHARACTER VARYING(20)
+            description: ""
+          - name: standard_concept
+            data_type: CHARACTER VARYING(1)
+            description: ""
+          - name: concept_code
+            data_type: CHARACTER VARYING(50)
+            description: ""
+          - name: valid_start_date
+            data_type: DATE
+            description: ""
+          - name: valid_end_date
+            data_type: DATE
+            description: ""
+          - name: invalid_reason
+            data_type: CHARACTER VARYING(1)
+            description: ""
+
+      - name: concept_ancestor
+        description: ""
+        columns:
+          - name: ancestor_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: descendant_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: min_levels_of_separation
+            data_type: INTEGER
+            description: ""
+          - name: max_levels_of_separation
+            data_type: INTEGER
+            description: ""
+
+      - name: concept_class
+        description: ""
+        columns:
+          - name: concept_class_id
+            data_type: CHARACTER VARYING(20)
+            description: ""
+          - name: concept_class_name
+            data_type: CHARACTER VARYING(255)
+            description: ""
+          - name: concept_class_concept_id
+            data_type: INTEGER
+            description: ""
+
+      - name: concept_relationship
+        description: ""
+        columns:
+          - name: concept_id_1
+            data_type: INTEGER
+            description: ""
+          - name: concept_id_2
+            data_type: INTEGER
+            description: ""
+          - name: relationship_id
+            data_type: CHARACTER VARYING(20)
+            description: ""
+          - name: valid_start_date
+            data_type: DATE
+            description: ""
+          - name: valid_end_date
+            data_type: DATE
+            description: ""
+          - name: invalid_reason
+            data_type: CHARACTER VARYING(1)
+            description: ""
+
+      - name: concept_synonym
+        description: ""
+        columns:
+          - name: concept_id
+            data_type: INTEGER
+            description: ""
+          - name: concept_synonym_name
+            data_type: CHARACTER VARYING(1000)
+            description: ""
+          - name: language_concept_id
+            data_type: INTEGER
+            description: ""
+
+      - name: condition_era
+        description: ""
+        columns:
+          - name: condition_era_id
+            data_type: INTEGER
+            description: ""
+          - name: person_id
+            data_type: INTEGER
+            description: ""
+          - name: condition_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: condition_era_start_date
+            data_type: DATE
+            description: ""
+          - name: condition_era_end_date
+            data_type: DATE
+            description: ""
+          - name: condition_occurrence_count
+            data_type: INTEGER
+            description: ""
+
+      - name: condition_occurrence
+        description: ""
+        columns:
+          - name: condition_occurrence_id
+            data_type: INTEGER
+            description: ""
+          - name: person_id
+            data_type: INTEGER
+            description: ""
+          - name: condition_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: condition_start_date
+            data_type: DATE
+            description: ""
+          - name: condition_start_datetime
+            data_type: TIMESTAMP WITHOUT TIME ZONE
+            description: ""
+          - name: condition_end_date
+            data_type: DATE
+            description: ""
+          - name: condition_end_datetime
+            data_type: TIMESTAMP WITHOUT TIME ZONE
+            description: ""
+          - name: condition_type_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: condition_status_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: stop_reason
+            data_type: CHARACTER VARYING(20)
+            description: ""
+          - name: provider_id
+            data_type: INTEGER
+            description: ""
+          - name: visit_occurrence_id
+            data_type: INTEGER
+            description: ""
+          - name: visit_detail_id
+            data_type: INTEGER
+            description: ""
+          - name: condition_source_value
+            data_type: CHARACTER VARYING(50)
+            description: ""
+          - name: condition_source_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: condition_status_source_value
+            data_type: CHARACTER VARYING(50)
+            description: ""
+
+      - name: cost
+        description: ""
+        columns:
+          - name: cost_id
+            data_type: INTEGER
+            description: ""
+          - name: cost_event_id
+            data_type: INTEGER
+            description: ""
+          - name: cost_domain_id
+            data_type: CHARACTER VARYING(20)
+            description: ""
+          - name: cost_type_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: currency_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: total_charge
+            data_type: NUMERIC
+            description: ""
+          - name: total_cost
+            data_type: NUMERIC
+            description: ""
+          - name: total_paid
+            data_type: NUMERIC
+            description: ""
+          - name: paid_by_payer
+            data_type: NUMERIC
+            description: ""
+          - name: paid_by_patient
+            data_type: NUMERIC
+            description: ""
+          - name: paid_patient_copay
+            data_type: NUMERIC
+            description: ""
+          - name: paid_patient_coinsurance
+            data_type: NUMERIC
+            description: ""
+          - name: paid_patient_deductible
+            data_type: NUMERIC
+            description: ""
+          - name: paid_by_primary
+            data_type: NUMERIC
+            description: ""
+          - name: paid_ingredient_cost
+            data_type: NUMERIC
+            description: ""
+          - name: paid_dispensing_fee
+            data_type: NUMERIC
+            description: ""
+          - name: payer_plan_period_id
+            data_type: INTEGER
+            description: ""
+          - name: amount_allowed
+            data_type: NUMERIC
+            description: ""
+          - name: revenue_code_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: revenue_code_source_value
+            data_type: CHARACTER VARYING(50)
+            description: ""
+          - name: drg_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: drg_source_value
+            data_type: CHARACTER VARYING(3)
+            description: ""
+
+      - name: death
+        description: ""
+        columns:
+          - name: person_id
+            data_type: INTEGER
+            description: ""
+          - name: death_date
+            data_type: DATE
+            description: ""
+          - name: death_datetime
+            data_type: TIMESTAMP WITHOUT TIME ZONE
+            description: ""
+          - name: death_type_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: cause_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: cause_source_value
+            data_type: CHARACTER VARYING(50)
+            description: ""
+          - name: cause_source_concept_id
+            data_type: INTEGER
+            description: ""
+
+      - name: device_exposure
+        description: ""
+        columns:
+          - name: device_exposure_id
+            data_type: INTEGER
+            description: ""
+          - name: person_id
+            data_type: INTEGER
+            description: ""
+          - name: device_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: device_exposure_start_date
+            data_type: DATE
+            description: ""
+          - name: device_exposure_start_datetime
+            data_type: TIMESTAMP WITHOUT TIME ZONE
+            description: ""
+          - name: device_exposure_end_date
+            data_type: DATE
+            description: ""
+          - name: device_exposure_end_datetime
+            data_type: TIMESTAMP WITHOUT TIME ZONE
+            description: ""
+          - name: device_type_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: unique_device_id
+            data_type: CHARACTER VARYING(255)
+            description: ""
+          - name: production_id
+            data_type: CHARACTER VARYING(255)
+            description: ""
+          - name: quantity
+            data_type: INTEGER
+            description: ""
+          - name: provider_id
+            data_type: INTEGER
+            description: ""
+          - name: visit_occurrence_id
+            data_type: INTEGER
+            description: ""
+          - name: visit_detail_id
+            data_type: INTEGER
+            description: ""
+          - name: device_source_value
+            data_type: CHARACTER VARYING(50)
+            description: ""
+          - name: device_source_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: unit_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: unit_source_value
+            data_type: CHARACTER VARYING(50)
+            description: ""
+          - name: unit_source_concept_id
+            data_type: INTEGER
+            description: ""
+
+      - name: domain
+        description: ""
+        columns:
+          - name: domain_id
+            data_type: CHARACTER VARYING(20)
+            description: ""
+          - name: domain_name
+            data_type: CHARACTER VARYING(255)
+            description: ""
+          - name: domain_concept_id
+            data_type: INTEGER
+            description: ""
+
+      - name: dose_era
+        description: ""
+        columns:
+          - name: dose_era_id
+            data_type: INTEGER
+            description: ""
+          - name: person_id
+            data_type: INTEGER
+            description: ""
+          - name: drug_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: unit_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: dose_value
+            data_type: NUMERIC
+            description: ""
+          - name: dose_era_start_date
+            data_type: DATE
+            description: ""
+          - name: dose_era_end_date
+            data_type: DATE
+            description: ""
+
+      - name: drug_era
+        description: ""
+        columns:
+          - name: drug_era_id
+            data_type: INTEGER
+            description: ""
+          - name: person_id
+            data_type: INTEGER
+            description: ""
+          - name: drug_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: drug_era_start_date
+            data_type: DATE
+            description: ""
+          - name: drug_era_end_date
+            data_type: DATE
+            description: ""
+          - name: drug_exposure_count
+            data_type: INTEGER
+            description: ""
+          - name: gap_days
+            data_type: INTEGER
+            description: ""
+
+      - name: drug_exposure
+        description: ""
+        columns:
+          - name: drug_exposure_id
+            data_type: INTEGER
+            description: ""
+          - name: person_id
+            data_type: INTEGER
+            description: ""
+          - name: drug_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: drug_exposure_start_date
+            data_type: DATE
+            description: ""
+          - name: drug_exposure_start_datetime
+            data_type: TIMESTAMP WITHOUT TIME ZONE
+            description: ""
+          - name: drug_exposure_end_date
+            data_type: DATE
+            description: ""
+          - name: drug_exposure_end_datetime
+            data_type: TIMESTAMP WITHOUT TIME ZONE
+            description: ""
+          - name: verbatim_end_date
+            data_type: DATE
+            description: ""
+          - name: drug_type_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: stop_reason
+            data_type: CHARACTER VARYING(20)
+            description: ""
+          - name: refills
+            data_type: INTEGER
+            description: ""
+          - name: quantity
+            data_type: NUMERIC
+            description: ""
+          - name: days_supply
+            data_type: INTEGER
+            description: ""
+          - name: sig
+            data_type: TEXT
+            description: ""
+          - name: route_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: lot_number
+            data_type: CHARACTER VARYING(50)
+            description: ""
+          - name: provider_id
+            data_type: INTEGER
+            description: ""
+          - name: visit_occurrence_id
+            data_type: INTEGER
+            description: ""
+          - name: visit_detail_id
+            data_type: INTEGER
+            description: ""
+          - name: drug_source_value
+            data_type: CHARACTER VARYING(50)
+            description: ""
+          - name: drug_source_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: route_source_value
+            data_type: CHARACTER VARYING(50)
+            description: ""
+          - name: dose_unit_source_value
+            data_type: CHARACTER VARYING(50)
+            description: ""
+
+      - name: drug_strength
+        description: ""
+        columns:
+          - name: drug_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: ingredient_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: amount_value
+            data_type: NUMERIC
+            description: ""
+          - name: amount_unit_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: numerator_value
+            data_type: NUMERIC
+            description: ""
+          - name: numerator_unit_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: denominator_value
+            data_type: NUMERIC
+            description: ""
+          - name: denominator_unit_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: box_size
+            data_type: INTEGER
+            description: ""
+          - name: valid_start_date
+            data_type: DATE
+            description: ""
+          - name: valid_end_date
+            data_type: DATE
+            description: ""
+          - name: invalid_reason
+            data_type: CHARACTER VARYING(1)
+            description: ""
+
+      - name: episode
+        description: ""
+        columns:
+          - name: episode_id
+            data_type: INTEGER
+            description: ""
+          - name: person_id
+            data_type: INTEGER
+            description: ""
+          - name: episode_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: episode_start_date
+            data_type: DATE
+            description: ""
+          - name: episode_start_datetime
+            data_type: TIMESTAMP WITHOUT TIME ZONE
+            description: ""
+          - name: episode_end_date
+            data_type: DATE
+            description: ""
+          - name: episode_end_datetime
+            data_type: TIMESTAMP WITHOUT TIME ZONE
+            description: ""
+          - name: episode_parent_id
+            data_type: INTEGER
+            description: ""
+          - name: episode_number
+            data_type: INTEGER
+            description: ""
+          - name: episode_object_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: episode_type_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: episode_source_value
+            data_type: CHARACTER VARYING(50)
+            description: ""
+          - name: episode_source_concept_id
+            data_type: INTEGER
+            description: ""
+
+      - name: episode_event
+        description: ""
+        columns:
+          - name: episode_id
+            data_type: INTEGER
+            description: ""
+          - name: event_id
+            data_type: INTEGER
+            description: ""
+          - name: episode_event_field_concept_id
+            data_type: INTEGER
+            description: ""
+
+      - name: fact_relationship
+        description: ""
+        columns:
+          - name: domain_concept_id_1
+            data_type: INTEGER
+            description: ""
+          - name: fact_id_1
+            data_type: INTEGER
+            description: ""
+          - name: domain_concept_id_2
+            data_type: INTEGER
+            description: ""
+          - name: fact_id_2
+            data_type: INTEGER
+            description: ""
+          - name: relationship_concept_id
+            data_type: INTEGER
+            description: ""
+
+      - name: location
+        description: ""
+        columns:
+          - name: location_id
+            data_type: INTEGER
+            description: ""
+          - name: address_1
+            data_type: CHARACTER VARYING(50)
+            description: ""
+          - name: address_2
+            data_type: CHARACTER VARYING(50)
+            description: ""
+          - name: city
+            data_type: CHARACTER VARYING(50)
+            description: ""
+          - name: state
+            data_type: CHARACTER VARYING(2)
+            description: ""
+          - name: zip
+            data_type: CHARACTER VARYING(9)
+            description: ""
+          - name: county
+            data_type: CHARACTER VARYING(20)
+            description: ""
+          - name: location_source_value
+            data_type: CHARACTER VARYING(50)
+            description: ""
+          - name: country_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: country_source_value
+            data_type: CHARACTER VARYING(80)
+            description: ""
+          - name: latitude
+            data_type: NUMERIC
+            description: ""
+          - name: longitude
+            data_type: NUMERIC
+            description: ""
+
+      - name: measurement
+        description: ""
+        columns:
+          - name: measurement_id
+            data_type: INTEGER
+            description: ""
+          - name: person_id
+            data_type: INTEGER
+            description: ""
+          - name: measurement_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: measurement_date
+            data_type: DATE
+            description: ""
+          - name: measurement_datetime
+            data_type: TIMESTAMP WITHOUT TIME ZONE
+            description: ""
+          - name: measurement_time
+            data_type: CHARACTER VARYING(10)
+            description: ""
+          - name: measurement_type_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: operator_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: value_as_number
+            data_type: NUMERIC
+            description: ""
+          - name: value_as_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: unit_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: range_low
+            data_type: NUMERIC
+            description: ""
+          - name: range_high
+            data_type: NUMERIC
+            description: ""
+          - name: provider_id
+            data_type: INTEGER
+            description: ""
+          - name: visit_occurrence_id
+            data_type: INTEGER
+            description: ""
+          - name: visit_detail_id
+            data_type: INTEGER
+            description: ""
+          - name: measurement_source_value
+            data_type: CHARACTER VARYING(50)
+            description: ""
+          - name: measurement_source_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: unit_source_value
+            data_type: CHARACTER VARYING(50)
+            description: ""
+          - name: unit_source_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: value_source_value
+            data_type: CHARACTER VARYING(50)
+            description: ""
+          - name: measurement_event_id
+            data_type: INTEGER
+            description: ""
+          - name: meas_event_field_concept_id
+            data_type: INTEGER
+            description: ""
+
+      - name: metadata
+        description: ""
+        columns:
+          - name: metadata_id
+            data_type: INTEGER
+            description: ""
+          - name: metadata_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: metadata_type_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: name
+            data_type: CHARACTER VARYING(250)
+            description: ""
+          - name: value_as_string
+            data_type: CHARACTER VARYING(250)
+            description: ""
+          - name: value_as_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: value_as_number
+            data_type: NUMERIC
+            description: ""
+          - name: metadata_date
+            data_type: DATE
+            description: ""
+          - name: metadata_datetime
+            data_type: TIMESTAMP WITHOUT TIME ZONE
+            description: ""
+
+      - name: note
+        description: ""
+        columns:
+          - name: note_id
+            data_type: INTEGER
+            description: ""
+          - name: person_id
+            data_type: INTEGER
+            description: ""
+          - name: note_date
+            data_type: DATE
+            description: ""
+          - name: note_datetime
+            data_type: TIMESTAMP WITHOUT TIME ZONE
+            description: ""
+          - name: note_type_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: note_class_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: note_title
+            data_type: CHARACTER VARYING(250)
+            description: ""
+          - name: note_text
+            data_type: TEXT
+            description: ""
+          - name: encoding_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: language_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: provider_id
+            data_type: INTEGER
+            description: ""
+          - name: visit_occurrence_id
+            data_type: INTEGER
+            description: ""
+          - name: visit_detail_id
+            data_type: INTEGER
+            description: ""
+          - name: note_source_value
+            data_type: CHARACTER VARYING(50)
+            description: ""
+          - name: note_event_id
+            data_type: INTEGER
+            description: ""
+          - name: note_event_field_concept_id
+            data_type: INTEGER
+            description: ""
+
+      - name: note_nlp
+        description: ""
+        columns:
+          - name: note_nlp_id
+            data_type: INTEGER
+            description: ""
+          - name: note_id
+            data_type: INTEGER
+            description: ""
+          - name: section_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: snippet
+            data_type: CHARACTER VARYING(250)
+            description: ""
+          - name: offset
+            data_type: CHARACTER VARYING(50)
+            description: ""
+          - name: lexical_variant
+            data_type: CHARACTER VARYING(250)
+            description: ""
+          - name: note_nlp_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: note_nlp_source_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: nlp_system
+            data_type: CHARACTER VARYING(250)
+            description: ""
+          - name: nlp_date
+            data_type: DATE
+            description: ""
+          - name: nlp_datetime
+            data_type: TIMESTAMP WITHOUT TIME ZONE
+            description: ""
+          - name: term_exists
+            data_type: CHARACTER VARYING(1)
+            description: ""
+          - name: term_temporal
+            data_type: CHARACTER VARYING(50)
+            description: ""
+          - name: term_modifiers
+            data_type: CHARACTER VARYING(2000)
+            description: ""
+
+      - name: observation
+        description: ""
+        columns:
+          - name: observation_id
+            data_type: INTEGER
+            description: ""
+          - name: person_id
+            data_type: INTEGER
+            description: ""
+          - name: observation_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: observation_date
+            data_type: DATE
+            description: ""
+          - name: observation_datetime
+            data_type: TIMESTAMP WITHOUT TIME ZONE
+            description: ""
+          - name: observation_type_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: value_as_number
+            data_type: NUMERIC
+            description: ""
+          - name: value_as_string
+            data_type: CHARACTER VARYING(60)
+            description: ""
+          - name: value_as_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: qualifier_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: unit_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: provider_id
+            data_type: INTEGER
+            description: ""
+          - name: visit_occurrence_id
+            data_type: INTEGER
+            description: ""
+          - name: visit_detail_id
+            data_type: INTEGER
+            description: ""
+          - name: observation_source_value
+            data_type: CHARACTER VARYING(50)
+            description: ""
+          - name: observation_source_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: unit_source_value
+            data_type: CHARACTER VARYING(50)
+            description: ""
+          - name: qualifier_source_value
+            data_type: CHARACTER VARYING(50)
+            description: ""
+          - name: value_source_value
+            data_type: CHARACTER VARYING(50)
+            description: ""
+          - name: observation_event_id
+            data_type: INTEGER
+            description: ""
+          - name: obs_event_field_concept_id
+            data_type: INTEGER
+            description: ""
+
+      - name: observation_period
+        description: ""
+        columns:
+          - name: observation_period_id
+            data_type: INTEGER
+            description: ""
+          - name: person_id
+            data_type: INTEGER
+            description: ""
+          - name: observation_period_start_date
+            data_type: DATE
+            description: ""
+          - name: observation_period_end_date
+            data_type: DATE
+            description: ""
+          - name: period_type_concept_id
+            data_type: INTEGER
+            description: ""
+
+      - name: payer_plan_period
+        description: ""
+        columns:
+          - name: payer_plan_period_id
+            data_type: INTEGER
+            description: ""
+          - name: person_id
+            data_type: INTEGER
+            description: ""
+          - name: payer_plan_period_start_date
+            data_type: DATE
+            description: ""
+          - name: payer_plan_period_end_date
+            data_type: DATE
+            description: ""
+          - name: payer_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: payer_source_value
+            data_type: CHARACTER VARYING(50)
+            description: ""
+          - name: payer_source_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: plan_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: plan_source_value
+            data_type: CHARACTER VARYING(50)
+            description: ""
+          - name: plan_source_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: sponsor_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: sponsor_source_value
+            data_type: CHARACTER VARYING(50)
+            description: ""
+          - name: sponsor_source_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: family_source_value
+            data_type: CHARACTER VARYING(50)
+            description: ""
+          - name: stop_reason_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: stop_reason_source_value
+            data_type: CHARACTER VARYING(50)
+            description: ""
+          - name: stop_reason_source_concept_id
+            data_type: INTEGER
+            description: ""
+
+      - name: person
+        description: ""
+        columns:
+          - name: person_id
+            data_type: INTEGER
+            description: ""
+          - name: gender_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: year_of_birth
+            data_type: INTEGER
+            description: ""
+          - name: month_of_birth
+            data_type: INTEGER
+            description: ""
+          - name: day_of_birth
+            data_type: INTEGER
+            description: ""
+          - name: birth_datetime
+            data_type: TIMESTAMP WITHOUT TIME ZONE
+            description: ""
+          - name: race_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: ethnicity_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: location_id
+            data_type: INTEGER
+            description: ""
+          - name: provider_id
+            data_type: INTEGER
+            description: ""
+          - name: care_site_id
+            data_type: INTEGER
+            description: ""
+          - name: person_source_value
+            data_type: CHARACTER VARYING(50)
+            description: ""
+          - name: gender_source_value
+            data_type: CHARACTER VARYING(50)
+            description: ""
+          - name: gender_source_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: race_source_value
+            data_type: CHARACTER VARYING(50)
+            description: ""
+          - name: race_source_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: ethnicity_source_value
+            data_type: CHARACTER VARYING(50)
+            description: ""
+          - name: ethnicity_source_concept_id
+            data_type: INTEGER
+            description: ""
+
+      - name: procedure_occurrence
+        description: ""
+        columns:
+          - name: procedure_occurrence_id
+            data_type: INTEGER
+            description: ""
+          - name: person_id
+            data_type: INTEGER
+            description: ""
+          - name: procedure_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: procedure_date
+            data_type: DATE
+            description: ""
+          - name: procedure_datetime
+            data_type: TIMESTAMP WITHOUT TIME ZONE
+            description: ""
+          - name: procedure_end_date
+            data_type: DATE
+            description: ""
+          - name: procedure_end_datetime
+            data_type: TIMESTAMP WITHOUT TIME ZONE
+            description: ""
+          - name: procedure_type_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: modifier_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: quantity
+            data_type: INTEGER
+            description: ""
+          - name: provider_id
+            data_type: INTEGER
+            description: ""
+          - name: visit_occurrence_id
+            data_type: INTEGER
+            description: ""
+          - name: visit_detail_id
+            data_type: INTEGER
+            description: ""
+          - name: procedure_source_value
+            data_type: CHARACTER VARYING(50)
+            description: ""
+          - name: procedure_source_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: modifier_source_value
+            data_type: CHARACTER VARYING(50)
+            description: ""
+
+      - name: provider
+        description: ""
+        columns:
+          - name: provider_id
+            data_type: INTEGER
+            description: ""
+          - name: provider_name
+            data_type: CHARACTER VARYING(255)
+            description: ""
+          - name: npi
+            data_type: CHARACTER VARYING(20)
+            description: ""
+          - name: dea
+            data_type: CHARACTER VARYING(20)
+            description: ""
+          - name: specialty_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: care_site_id
+            data_type: INTEGER
+            description: ""
+          - name: year_of_birth
+            data_type: INTEGER
+            description: ""
+          - name: gender_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: provider_source_value
+            data_type: CHARACTER VARYING(50)
+            description: ""
+          - name: specialty_source_value
+            data_type: CHARACTER VARYING(50)
+            description: ""
+          - name: specialty_source_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: gender_source_value
+            data_type: CHARACTER VARYING(50)
+            description: ""
+          - name: gender_source_concept_id
+            data_type: INTEGER
+            description: ""
+
+      - name: relationship
+        description: ""
+        columns:
+          - name: relationship_id
+            data_type: CHARACTER VARYING(20)
+            description: ""
+          - name: relationship_name
+            data_type: CHARACTER VARYING(255)
+            description: ""
+          - name: is_hierarchical
+            data_type: CHARACTER VARYING(1)
+            description: ""
+          - name: defines_ancestry
+            data_type: CHARACTER VARYING(1)
+            description: ""
+          - name: reverse_relationship_id
+            data_type: CHARACTER VARYING(20)
+            description: ""
+          - name: relationship_concept_id
+            data_type: INTEGER
+            description: ""
+
+      - name: source_to_concept_map
+        description: ""
+        columns:
+          - name: source_code
+            data_type: CHARACTER VARYING(50)
+            description: ""
+          - name: source_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: source_vocabulary_id
+            data_type: CHARACTER VARYING(20)
+            description: ""
+          - name: source_code_description
+            data_type: CHARACTER VARYING(255)
+            description: ""
+          - name: target_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: target_vocabulary_id
+            data_type: CHARACTER VARYING(20)
+            description: ""
+          - name: valid_start_date
+            data_type: DATE
+            description: ""
+          - name: valid_end_date
+            data_type: DATE
+            description: ""
+          - name: invalid_reason
+            data_type: CHARACTER VARYING(1)
+            description: ""
+
+      - name: specimen
+        description: ""
+        columns:
+          - name: specimen_id
+            data_type: INTEGER
+            description: ""
+          - name: person_id
+            data_type: INTEGER
+            description: ""
+          - name: specimen_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: specimen_type_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: specimen_date
+            data_type: DATE
+            description: ""
+          - name: specimen_datetime
+            data_type: TIMESTAMP WITHOUT TIME ZONE
+            description: ""
+          - name: quantity
+            data_type: NUMERIC
+            description: ""
+          - name: unit_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: anatomic_site_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: disease_status_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: specimen_source_id
+            data_type: CHARACTER VARYING(50)
+            description: ""
+          - name: specimen_source_value
+            data_type: CHARACTER VARYING(50)
+            description: ""
+          - name: unit_source_value
+            data_type: CHARACTER VARYING(50)
+            description: ""
+          - name: anatomic_site_source_value
+            data_type: CHARACTER VARYING(50)
+            description: ""
+          - name: disease_status_source_value
+            data_type: CHARACTER VARYING(50)
+            description: ""
+
+      - name: visit_detail
+        description: ""
+        columns:
+          - name: visit_detail_id
+            data_type: INTEGER
+            description: ""
+          - name: person_id
+            data_type: INTEGER
+            description: ""
+          - name: visit_detail_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: visit_detail_start_date
+            data_type: DATE
+            description: ""
+          - name: visit_detail_start_datetime
+            data_type: TIMESTAMP WITHOUT TIME ZONE
+            description: ""
+          - name: visit_detail_end_date
+            data_type: DATE
+            description: ""
+          - name: visit_detail_end_datetime
+            data_type: TIMESTAMP WITHOUT TIME ZONE
+            description: ""
+          - name: visit_detail_type_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: provider_id
+            data_type: INTEGER
+            description: ""
+          - name: care_site_id
+            data_type: INTEGER
+            description: ""
+          - name: visit_detail_source_value
+            data_type: CHARACTER VARYING(50)
+            description: ""
+          - name: visit_detail_source_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: admitted_from_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: admitted_from_source_value
+            data_type: CHARACTER VARYING(50)
+            description: ""
+          - name: discharged_to_source_value
+            data_type: CHARACTER VARYING(50)
+            description: ""
+          - name: discharged_to_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: preceding_visit_detail_id
+            data_type: INTEGER
+            description: ""
+          - name: parent_visit_detail_id
+            data_type: INTEGER
+            description: ""
+          - name: visit_occurrence_id
+            data_type: INTEGER
+            description: ""
+
+      - name: visit_occurrence
+        description: ""
+        columns:
+          - name: visit_occurrence_id
+            data_type: INTEGER
+            description: ""
+          - name: person_id
+            data_type: INTEGER
+            description: ""
+          - name: visit_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: visit_start_date
+            data_type: DATE
+            description: ""
+          - name: visit_start_datetime
+            data_type: TIMESTAMP WITHOUT TIME ZONE
+            description: ""
+          - name: visit_end_date
+            data_type: DATE
+            description: ""
+          - name: visit_end_datetime
+            data_type: TIMESTAMP WITHOUT TIME ZONE
+            description: ""
+          - name: visit_type_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: provider_id
+            data_type: INTEGER
+            description: ""
+          - name: care_site_id
+            data_type: INTEGER
+            description: ""
+          - name: visit_source_value
+            data_type: CHARACTER VARYING(50)
+            description: ""
+          - name: visit_source_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: admitted_from_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: admitted_from_source_value
+            data_type: CHARACTER VARYING(50)
+            description: ""
+          - name: discharged_to_concept_id
+            data_type: INTEGER
+            description: ""
+          - name: discharged_to_source_value
+            data_type: CHARACTER VARYING(50)
+            description: ""
+          - name: preceding_visit_occurrence_id
+            data_type: INTEGER
+            description: ""
+
+      - name: vocabulary
+        description: ""
+        columns:
+          - name: vocabulary_id
+            data_type: CHARACTER VARYING(20)
+            description: ""
+          - name: vocabulary_name
+            data_type: CHARACTER VARYING(255)
+            description: ""
+          - name: vocabulary_reference
+            data_type: CHARACTER VARYING(255)
+            description: ""
+          - name: vocabulary_version
+            data_type: CHARACTER VARYING(255)
+            description: ""
+          - name: vocabulary_concept_id
+            data_type: INTEGER
+            description: ""
+
+                
